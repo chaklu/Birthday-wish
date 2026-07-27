@@ -1,0 +1,77 @@
+/* ===== CylinderCarousel Component Styles ===== */
+
+.cylinder-carousel-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  height: 450px;
+  perspective: 1600px;
+  margin-bottom: 20px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cylinder-carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  animation: cylinder-rotate 15s linear infinite;
+}
+
+@keyframes cylinder-rotate {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.cylinder-carousel__item {
+  position: absolute;
+  width: 220px;
+  height: 320px;
+  transform-origin: center;
+  cursor: pointer;
+  backface-visibility: hidden;
+  filter: brightness(0.7) saturate(0.8);
+}
+
+.cylinder-carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.cylinder-carousel__overlay {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cylinder-carousel-wrapper {
+    height: 320px;
+    perspective: 1100px;
+  }
+
+  .cylinder-carousel__item {
+    width: 160px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cylinder-carousel-wrapper {
+    height: 250px;
+    perspective: 900px;
+  }
+
+  .cylinder-carousel__item {
+    width: 120px;
+    height: 180px;
+  }
+}
+
