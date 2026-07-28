@@ -410,16 +410,21 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* Page 5: Gallery 3D Carousel - WITH MOBILE FIX */
+/* Page 5: Gallery 3D Carousel - NO RESPONSIVENESS */
 .page-5 {
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  display: flex;  /* ← YEH ADD KAREN */
-  flex-direction: column;  /* ← YEH ADD KAREN */
-  justify-content: center;  /* ← YEH ADD KAREN */
-  align-items: center;  /* ← YEH ADD KAREN */
-  padding: 10px 20px;  /* ← YEH CHANGE KAREN */
+}
+
+.page-5::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
 }
 
 .gallery-stars {
@@ -555,7 +560,7 @@ body {
 }
 
 /* ============================================
-   Page 6: Urdu Nazm, Wadaein & Wajahain - RESPONSIVE
+   Page 6: Urdu Nazm, Wadaein & Wajahain - RESPONSIVE WITH FIX
    ============================================ */
 .page-6 {
   background-size: cover;
@@ -563,8 +568,11 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   justify-content: flex-start;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-6::before {
@@ -582,18 +590,23 @@ body {
   max-width: 900px;
   width: 100%;
   z-index: 1;
-  padding: 30px 20px;
+  padding: 20px 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Nazm Section */
 .nazm-section {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
+  width: 100%;
 }
 
 .nazm-title {
   font-size: 2.2rem;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   background: linear-gradient(90deg, #f093fb, #f5576c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -603,14 +616,14 @@ body {
 .nazm-sub {
   font-size: 1rem;
   color: rgba(255,255,255,0.5);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-style: italic;
 }
 
 .nazm-content {
   background: rgba(255,255,255,0.07);
   border-radius: 20px;
-  padding: 30px 35px;
+  padding: 25px 30px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.1);
   max-width: 650px;
@@ -627,13 +640,14 @@ body {
 
 /* Wadaein Section */
 .wadaein-section {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
+  width: 100%;
 }
 
 .wadaein-title {
   font-size: 2rem;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   background: linear-gradient(90deg, #4facfe, #43e97b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -643,21 +657,21 @@ body {
 .wadaein-sub {
   font-size: 1rem;
   color: rgba(255,255,255,0.5);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-style: italic;
 }
 
 .wadaein-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 12px;
   max-width: 750px;
   margin: 0 auto;
 }
 
 .wada-item {
   background: rgba(255,255,255,0.08);
-  padding: 16px 18px;
+  padding: 14px 16px;
   border-radius: 14px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.1);
@@ -687,13 +701,14 @@ body {
 
 /* Wajahain Flip Cards */
 .wajahain-section {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .wajahain-title {
   font-size: 2rem;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   background: linear-gradient(90deg, #f5576c, #f093fb, #4facfe);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -703,16 +718,16 @@ body {
 .wajahain-sub {
   font-size: 1rem;
   color: rgba(255,255,255,0.5);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   font-style: italic;
 }
 
 .wajahain-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 14px;
   max-width: 800px;
-  margin: 0 auto 30px;
+  margin: 0 auto 20px;
 }
 
 .wajahain-card {
@@ -791,6 +806,13 @@ body {
   font-weight: 500;
 }
 
+/* Page 6 ka Next Button - Properly visible */
+.page-6 .next-button {
+  position: relative;
+  z-index: 2;
+  margin-top: 10px;
+  flex-shrink: 0;
+}
 /* Page 7: Ending */
 .page-7 {
   background-size: cover;
@@ -1527,143 +1549,301 @@ body {
     font-size: 1.2rem;
   }
 }
-/* Mobile-specific fixes for Page 5 - ensures Next button is visible */
+/* ============================================
+   PAGE 6 - MOBILE RESPONSIVE FIXES
+   ============================================ */
+
+/* Tablet (768px) */
 @media (max-width: 768px) {
-  .page-5 {
-    padding: 8px 10px;
-    justify-content: flex-start;
-    padding-top: 15px;
+  .page-6 {
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
-  .gallery-title {
+  .urdu-section {
+    padding: 15px 12px;
+  }
+
+  .nazm-title {
     font-size: 1.6rem;
-    margin-bottom: 2px;
-  }
-  
-  .gallery-subtitle {
-    font-size: 0.85rem;
-    margin-bottom: 6px;
   }
 
-  .page-5 .cylinder-carousel-wrapper {
-    height: 250px;
-    max-height: 40vh;
-    margin-bottom: 6px;
-    perspective: 1000px;
+  .nazm-content {
+    padding: 20px 18px;
   }
 
-  .page-5 .cylinder-carousel__item {
-    width: 140px;
-    height: 200px;
+  .nazm-verse {
+    font-size: 1rem;
   }
 
-  .page-5 .next-button {
-    padding: 10px 25px;
-    font-size: 0.9rem;
-    margin-top: 4px;
+  .wadaein-title {
+    font-size: 1.5rem;
+  }
+
+  .wadaein-list {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .wajahain-title {
+    font-size: 1.5rem;
+  }
+
+  .wajahain-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 500px;
+  }
+
+  .wajahain-card {
+    height: 120px;
+  }
+
+  .wajahain-card-num {
+    font-size: 1.6rem;
+  }
+
+  /* Next Button - Mobile */
+  .page-6 .next-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    margin-top: 8px;
   }
 }
 
+/* Phone (480px) */
 @media (max-width: 480px) {
-  .page-5 {
-    padding: 5px 8px;
-    padding-top: 10px;
+  .page-6 {
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
-  .gallery-title {
+  .urdu-section {
+    padding: 10px 8px;
+  }
+
+  .nazm-section {
+    margin-bottom: 18px;
+  }
+
+  .nazm-title {
     font-size: 1.3rem;
-    margin-bottom: 1px;
-  }
-  
-  .gallery-subtitle {
-    font-size: 0.75rem;
-    margin-bottom: 4px;
   }
 
-  .page-5 .cylinder-carousel-wrapper {
-    height: 200px;
-    max-height: 35vh;
-    margin-bottom: 4px;
-    perspective: 800px;
+  .nazm-sub {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
   }
 
-  .page-5 .cylinder-carousel__item {
-    width: 110px;
-    height: 160px;
+  .nazm-content {
+    padding: 15px 12px;
   }
 
-  .page-5 .next-button {
-    padding: 8px 20px;
-    font-size: 0.8rem;
-    margin-top: 3px;
+  .nazm-verse {
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  .wadaein-section {
+    margin-bottom: 18px;
+  }
+
+  .wadaein-title {
+    font-size: 1.2rem;
+  }
+
+  .wadaein-sub {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .wadaein-list {
+    gap: 8px;
+  }
+
+  .wada-item {
+    padding: 10px 12px;
+  }
+
+  .wada-text {
+    font-size: 0.82rem;
+  }
+
+  .wada-icon {
+    font-size: 1.2rem;
+  }
+
+  .wajahain-section {
+    margin-bottom: 15px;
+  }
+
+  .wajahain-title {
+    font-size: 1.2rem;
+  }
+
+  .wajahain-sub {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .wajahain-grid {
+    gap: 8px;
+  }
+
+  .wajahain-card {
+    height: 100px;
+  }
+
+  .wajahain-card-num {
+    font-size: 1.3rem;
+  }
+
+  .wajahain-card-reason {
+    font-size: 0.72rem;
+  }
+
+  .wajahain-card-label {
+    font-size: 0.55rem;
+  }
+
+  .wajahain-card-heart {
+    font-size: 1rem;
+  }
+
+  /* Next Button - Phone */
+  .page-6 .next-button {
+    padding: 10px 25px;
+    font-size: 0.85rem;
+    margin-top: 6px;
   }
 }
 
+/* Very Small Phone (380px) */
 @media (max-width: 380px) {
-  .page-5 {
-    padding: 4px 5px;
-    padding-top: 8px;
+  .page-6 {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
-  .gallery-title {
+  .urdu-section {
+    padding: 8px 5px;
+  }
+
+  .nazm-title {
     font-size: 1.1rem;
   }
-  
-  .gallery-subtitle {
-    font-size: 0.7rem;
-    margin-bottom: 3px;
+
+  .nazm-content {
+    padding: 12px 10px;
   }
 
-  .page-5 .cylinder-carousel-wrapper {
-    height: 160px;
-    max-height: 30vh;
-    margin-bottom: 3px;
-    perspective: 600px;
+  .nazm-verse {
+    font-size: 0.78rem;
   }
 
-  .page-5 .cylinder-carousel__item {
-    width: 90px;
-    height: 130px;
+  .wadaein-title {
+    font-size: 1rem;
   }
 
-  .page-5 .next-button {
-    padding: 6px 16px;
-    font-size: 0.7rem;
-    margin-top: 2px;
+  .wada-item {
+    padding: 8px 10px;
+  }
+
+  .wada-text {
+    font-size: 0.75rem;
+  }
+
+  .wajahain-title {
+    font-size: 1rem;
+  }
+
+  .wajahain-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .wajahain-card {
+    height: 80px;
+  }
+
+  .wajahain-card-num {
+    font-size: 1.1rem;
+  }
+
+  .wajahain-card-reason {
+    font-size: 0.65rem;
+  }
+
+  .wajahain-card-front,
+  .wajahain-card-back {
+    padding: 6px;
+    gap: 3px;
+  }
+
+  /* Next Button - Very Small */
+  .page-6 .next-button {
+    padding: 8px 18px;
+    font-size: 0.75rem;
+    margin-top: 4px;
   }
 }
 
 /* Height-based fix for landscape mobile */
 @media (max-height: 600px) and (max-width: 768px) {
-  .page-5 {
+  .page-6 {
     padding-top: 5px;
     padding-bottom: 5px;
-    justify-content: center;
   }
 
-  .gallery-title {
-    font-size: 1.2rem;
-    margin-bottom: 2px;
+  .urdu-section {
+    padding: 8px 10px;
   }
-  
-  .gallery-subtitle {
-    font-size: 0.7rem;
+
+  .nazm-section,
+  .wadaein-section {
+    margin-bottom: 12px;
+  }
+
+  .nazm-title,
+  .wadaein-title,
+  .wajahain-title {
+    font-size: 1.2rem;
     margin-bottom: 3px;
   }
 
-  .page-5 .cylinder-carousel-wrapper {
-    height: 150px;
-    max-height: 45vh;
-    margin-bottom: 4px;
+  .nazm-content {
+    padding: 12px 15px;
   }
 
-  .page-5 .cylinder-carousel__item {
-    width: 100px;
-    height: 140px;
+  .nazm-verse {
+    font-size: 0.85rem;
+    line-height: 1.6;
   }
 
-  .page-5 .next-button {
-    padding: 6px 18px;
-    font-size: 0.75rem;
+  .wadaein-list {
+    gap: 6px;
+  }
+
+  .wada-item {
+    padding: 8px 12px;
+  }
+
+  .wajahain-grid {
+    gap: 6px;
+  }
+
+  .wajahain-card {
+    height: 75px;
+  }
+
+  .wajahain-card-num {
+    font-size: 1.1rem;
+  }
+
+  /* Next Button - Landscape */
+  .page-6 .next-button {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+    margin-top: 4px;
   }
 }
