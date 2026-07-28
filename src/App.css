@@ -559,7 +559,9 @@ body {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Page 6: Urdu Nazm, Wadaein & Wajahain - NO RESPONSIVENESS */
+/* ============================================
+   Page 6: Urdu Nazm, Wadaein & Wajahain - RESPONSIVE
+   ============================================ */
 .page-6 {
   background-size: cover;
   background-position: center;
@@ -875,13 +877,11 @@ body {
 }
 
 /* ============================================
-   RESPONSIVE DESIGN - Only for pages 1-4 and 7
-   Pages 5 and 6 have NO responsiveness
+   RESPONSIVE DESIGN
    ============================================ */
 
 /* Tablet Landscape & smaller laptops (1024px) */
 @media (max-width: 1024px) {
-  /* Page 1-4 & 7 only - NOT Page 5 or 6 */
   .wish-text {
     font-size: 3.2rem;
   }
@@ -907,6 +907,10 @@ body {
     max-width: 650px;
   }
 
+  .gallery-title {
+    font-size: 2.2rem;
+  }
+
   .ending-title {
     font-size: 3.2rem;
   }
@@ -919,12 +923,32 @@ body {
   .big-heart {
     font-size: 5rem;
   }
+
+  /* Page 6 Responsive */
+  .nazm-title {
+    font-size: 1.8rem;
+  }
+
+  .wadaein-title {
+    font-size: 1.7rem;
+  }
+
+  .wajahain-title {
+    font-size: 1.7rem;
+  }
+
+  .wajahain-grid {
+    gap: 12px;
+  }
+
+  .wajahain-card {
+    height: 120px;
+  }
 }
 
 /* Tablet Portrait & Large Phones (768px) */
 @media (max-width: 768px) {
-  /* Page 1-4 & 7 only - NOT Page 5 or 6 */
-  .page:not(.page-5):not(.page-6) {
+  .page:not(.page-5) {
     padding: 15px;
   }
 
@@ -997,6 +1021,14 @@ body {
     max-height: 50vh;
   }
 
+  .gallery-title {
+    font-size: 1.8rem;
+  }
+  
+  .gallery-subtitle {
+    font-size: 0.95rem;
+  }
+
   .ending-title {
     font-size: 2.5rem;
   }
@@ -1041,12 +1073,55 @@ body {
   .lightbox-info p {
     font-size: 1rem;
   }
+
+  /* Page 6 Responsive - Tablet */
+  .urdu-section {
+    padding: 20px 15px;
+  }
+
+  .nazm-title {
+    font-size: 1.6rem;
+  }
+
+  .nazm-content {
+    padding: 25px 20px;
+  }
+
+  .nazm-verse {
+    font-size: 1rem;
+  }
+
+  .wadaein-title {
+    font-size: 1.5rem;
+  }
+
+  .wadaein-list {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .wajahain-title {
+    font-size: 1.5rem;
+  }
+
+  .wajahain-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 500px;
+  }
+
+  .wajahain-card {
+    height: 120px;
+  }
+
+  .wajahain-card-num {
+    font-size: 1.6rem;
+  }
 }
 
 /* Phone (480px) */
 @media (max-width: 480px) {
-  /* Page 1-4 & 7 only - NOT Page 5 or 6 */
-  .page:not(.page-5):not(.page-6) {
+  .page:not(.page-5) {
     padding: 12px;
   }
 
@@ -1129,6 +1204,14 @@ body {
     max-height: 40vh;
   }
 
+  .gallery-title {
+    font-size: 1.4rem;
+  }
+  
+  .gallery-subtitle {
+    font-size: 0.85rem;
+  }
+
   .ending-title {
     font-size: 1.8rem;
   }
@@ -1147,6 +1230,72 @@ body {
   .restart-button {
     padding: 10px 25px;
     font-size: 0.9rem;
+  }
+
+  /* Page 6 Responsive - Phone */
+  .urdu-section {
+    padding: 15px 10px;
+  }
+
+  .nazm-title {
+    font-size: 1.4rem;
+  }
+
+  .nazm-content {
+    padding: 18px 15px;
+  }
+
+  .nazm-verse {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .wadaein-title {
+    font-size: 1.3rem;
+  }
+
+  .wadaein-list {
+    gap: 10px;
+  }
+
+  .wada-item {
+    padding: 12px 14px;
+  }
+
+  .wada-text {
+    font-size: 0.85rem;
+  }
+
+  .wada-icon {
+    font-size: 1.2rem;
+  }
+
+  .wajahain-title {
+    font-size: 1.3rem;
+  }
+
+  .wajahain-grid {
+    gap: 10px;
+  }
+
+  .wajahain-card {
+    height: 100px;
+  }
+
+  .wajahain-card-num {
+    font-size: 1.3rem;
+  }
+
+  .wajahain-card-reason {
+    font-size: 0.75rem;
+  }
+
+  .wajahain-card-label {
+    font-size: 0.6rem;
+  }
+
+  .wajahain-card-heart {
+    font-size: 1rem;
   }
 
   /* Lightbox */
@@ -1173,8 +1322,7 @@ body {
 
 /* Very Small Phone (380px and below) */
 @media (max-width: 380px) {
-  /* Page 1-4 & 7 only - NOT Page 5 or 6 */
-  .page:not(.page-5):not(.page-6) {
+  .page:not(.page-5) {
     padding: 10px;
   }
 
@@ -1240,6 +1388,10 @@ body {
     font-size: 1.2rem;
   }
 
+  .gallery-title {
+    font-size: 1.2rem;
+  }
+
   .ending-title {
     font-size: 1.5rem;
   }
@@ -1257,11 +1409,55 @@ body {
     padding: 8px 20px;
     font-size: 0.8rem;
   }
+
+  /* Page 6 Responsive - Very Small */
+  .nazm-title {
+    font-size: 1.2rem;
+  }
+
+  .nazm-content {
+    padding: 15px 12px;
+  }
+
+  .nazm-verse {
+    font-size: 0.82rem;
+  }
+
+  .wadaein-title {
+    font-size: 1.1rem;
+  }
+
+  .wajahain-title {
+    font-size: 1.1rem;
+  }
+
+  .wajahain-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .wajahain-card {
+    height: 85px;
+  }
+
+  .wajahain-card-num {
+    font-size: 1.1rem;
+  }
+
+  .wajahain-card-reason {
+    font-size: 0.68rem;
+  }
+
+  .wajahain-card-front,
+  .wajahain-card-back {
+    padding: 8px;
+    gap: 4px;
+  }
 }
 
-/* Height-based adjustments for landscape mobile - NOT Page 5 or 6 */
+/* Height-based adjustments for landscape mobile */
 @media (max-height: 600px) {
-  .page:not(.page-5):not(.page-6) {
+  .page:not(.page-5) {
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -1288,5 +1484,51 @@ body {
 
   .video-player {
     max-height: 50vh;
+  }
+
+  /* Page 6 Height adjustment */
+  .urdu-section {
+    padding: 10px 15px;
+  }
+
+  .nazm-section,
+  .wadaein-section {
+    margin-bottom: 20px;
+  }
+
+  .nazm-title,
+  .wadaein-title,
+  .wajahain-title {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+  }
+
+  .nazm-content {
+    padding: 15px 20px;
+  }
+
+  .nazm-verse {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .wadaein-list {
+    gap: 8px;
+  }
+
+  .wada-item {
+    padding: 10px 14px;
+  }
+
+  .wajahain-grid {
+    gap: 8px;
+  }
+
+  .wajahain-card {
+    height: 80px;
+  }
+
+  .wajahain-card-num {
+    font-size: 1.2rem;
   }
 }
