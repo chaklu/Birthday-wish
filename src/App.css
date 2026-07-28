@@ -410,9 +410,7 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* 3D Cylinder Carousel component styles live in src/components/ui/cylinder-carousel.css */
-
-/* Page 5: Gallery 3D Carousel */
+/* Page 5: Gallery 3D Carousel - NO RESPONSIVENESS */
 .page-5 {
   background-size: cover;
   background-position: center;
@@ -561,7 +559,7 @@ body {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Page 6: Urdu Nazm, Wadaein & Wajahain */
+/* Page 6: Urdu Nazm, Wadaein & Wajahain - NO RESPONSIVENESS */
 .page-6 {
   background-size: cover;
   background-position: center;
@@ -796,40 +794,6 @@ body {
   font-weight: 500;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .wajahain-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .wadaein-list {
-    grid-template-columns: 1fr;
-  }
-
-  .nazm-title {
-    font-size: 1.6rem;
-  }
-
-  .nazm-verse {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .wajahain-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-
-  .wajahain-card {
-    height: 120px;
-  }
-
-  .wajahain-card-num {
-    font-size: 1.5rem;
-  }
-}
-
 /* Page 7: Ending */
 .page-7 {
   background-size: cover;
@@ -911,11 +875,13 @@ body {
 }
 
 /* ============================================
-   RESPONSIVE DESIGN - Comprehensive Breakpoints
+   RESPONSIVE DESIGN - Only for pages 1-4 and 7
+   Pages 5 and 6 have NO responsiveness
    ============================================ */
 
 /* Tablet Landscape & smaller laptops (1024px) */
 @media (max-width: 1024px) {
+  /* Page 1-4 & 7 only - NOT Page 5 or 6 */
   .wish-text {
     font-size: 3.2rem;
   }
@@ -941,10 +907,6 @@ body {
     max-width: 650px;
   }
 
-  .gallery-title {
-    font-size: 2.2rem;
-  }
-
   .ending-title {
     font-size: 3.2rem;
   }
@@ -961,7 +923,8 @@ body {
 
 /* Tablet Portrait & Large Phones (768px) */
 @media (max-width: 768px) {
-  .page {
+  /* Page 1-4 & 7 only - NOT Page 5 or 6 */
+  .page:not(.page-5):not(.page-6) {
     padding: 15px;
   }
 
@@ -1034,14 +997,6 @@ body {
     max-height: 50vh;
   }
 
-  .gallery-title {
-    font-size: 1.8rem;
-  }
-  
-  .gallery-subtitle {
-    font-size: 0.95rem;
-  }
-
   .ending-title {
     font-size: 2.5rem;
   }
@@ -1090,7 +1045,8 @@ body {
 
 /* Phone (480px) */
 @media (max-width: 480px) {
-  .page {
+  /* Page 1-4 & 7 only - NOT Page 5 or 6 */
+  .page:not(.page-5):not(.page-6) {
     padding: 12px;
   }
 
@@ -1173,80 +1129,6 @@ body {
     max-height: 40vh;
   }
 
-  .gallery-title {
-    font-size: 1.4rem;
-  }
-  
-  .gallery-subtitle {
-    font-size: 0.85rem;
-  }
-
-  /* Page 6 - Urdu section mobile */
-  .urdu-section {
-    padding: 15px 10px;
-  }
-
-  .nazm-title {
-    font-size: 1.4rem;
-  }
-
-  .nazm-content {
-    padding: 20px 18px;
-  }
-
-  .nazm-verse {
-    font-size: 0.9rem;
-    line-height: 1.7;
-  }
-
-  .wadaein-title {
-    font-size: 1.3rem;
-  }
-
-  .wadaein-list {
-    gap: 10px;
-  }
-
-  .wada-item {
-    padding: 12px 14px;
-  }
-
-  .wada-text {
-    font-size: 0.85rem;
-  }
-
-  .wada-icon {
-    font-size: 1.2rem;
-  }
-
-  .wajahain-title {
-    font-size: 1.3rem;
-  }
-
-  .wajahain-grid {
-    gap: 10px;
-  }
-
-  .wajahain-card {
-    height: 100px;
-  }
-
-  .wajahain-card-num {
-    font-size: 1.3rem;
-  }
-
-  .wajahain-card-reason {
-    font-size: 0.75rem;
-  }
-
-  .wajahain-card-label {
-    font-size: 0.6rem;
-  }
-
-  .wajahain-card-heart {
-    font-size: 1rem;
-  }
-
   .ending-title {
     font-size: 1.8rem;
   }
@@ -1266,11 +1148,33 @@ body {
     padding: 10px 25px;
     font-size: 0.9rem;
   }
+
+  /* Lightbox */
+  .lightbox-image {
+    max-width: 95vw;
+    max-height: 50vh;
+  }
+
+  .lightbox-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .lightbox-info p {
+    font-size: 0.9rem;
+  }
+
+  .lightbox-close {
+    top: -30px;
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
 }
 
 /* Very Small Phone (380px and below) */
 @media (max-width: 380px) {
-  .page {
+  /* Page 1-4 & 7 only - NOT Page 5 or 6 */
+  .page:not(.page-5):not(.page-6) {
     padding: 10px;
   }
 
@@ -1336,53 +1240,6 @@ body {
     font-size: 1.2rem;
   }
 
-  .gallery-title {
-    font-size: 1.2rem;
-  }
-
-  .nazm-title {
-    font-size: 1.2rem;
-  }
-
-  .nazm-content {
-    padding: 15px 12px;
-  }
-
-  .nazm-verse {
-    font-size: 0.82rem;
-  }
-
-  .wadaein-title {
-    font-size: 1.1rem;
-  }
-
-  .wajahain-title {
-    font-size: 1.1rem;
-  }
-
-  .wajahain-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-
-  .wajahain-card {
-    height: 85px;
-  }
-
-  .wajahain-card-num {
-    font-size: 1.1rem;
-  }
-
-  .wajahain-card-reason {
-    font-size: 0.68rem;
-  }
-
-  .wajahain-card-front,
-  .wajahain-card-back {
-    padding: 8px;
-    gap: 4px;
-  }
-
   .ending-title {
     font-size: 1.5rem;
   }
@@ -1400,32 +1257,11 @@ body {
     padding: 8px 20px;
     font-size: 0.8rem;
   }
-
-  /* Lightbox */
-  .lightbox-image {
-    max-width: 95vw;
-    max-height: 50vh;
-  }
-
-  .lightbox-info h3 {
-    font-size: 1.1rem;
-  }
-
-  .lightbox-info p {
-    font-size: 0.9rem;
-  }
-
-  .lightbox-close {
-    top: -30px;
-    width: 30px;
-    height: 30px;
-    font-size: 0.9rem;
-  }
 }
 
-/* Height-based adjustments for landscape mobile */
+/* Height-based adjustments for landscape mobile - NOT Page 5 or 6 */
 @media (max-height: 600px) {
-  .page {
+  .page:not(.page-5):not(.page-6) {
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -1452,9 +1288,5 @@ body {
 
   .video-player {
     max-height: 50vh;
-  }
-
-  .cylinder-carousel-wrapper {
-    height: 200px !important;
   }
 }
