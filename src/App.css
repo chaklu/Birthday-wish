@@ -410,21 +410,16 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* Page 5: Gallery 3D Carousel - NO RESPONSIVENESS */
+/* Page 5: Gallery 3D Carousel - WITH MOBILE FIX */
 .page-5 {
   background-size: cover;
   background-position: center;
   overflow: hidden;
-}
-
-.page-5::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.55);
+  display: flex;  /* ← YEH ADD KAREN */
+  flex-direction: column;  /* ← YEH ADD KAREN */
+  justify-content: center;  /* ← YEH ADD KAREN */
+  align-items: center;  /* ← YEH ADD KAREN */
+  padding: 10px 20px;  /* ← YEH CHANGE KAREN */
 }
 
 .gallery-stars {
@@ -1530,5 +1525,145 @@ body {
 
   .wajahain-card-num {
     font-size: 1.2rem;
+  }
+}
+/* Mobile-specific fixes for Page 5 - ensures Next button is visible */
+@media (max-width: 768px) {
+  .page-5 {
+    padding: 8px 10px;
+    justify-content: flex-start;
+    padding-top: 15px;
+  }
+
+  .gallery-title {
+    font-size: 1.6rem;
+    margin-bottom: 2px;
+  }
+  
+  .gallery-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .page-5 .cylinder-carousel-wrapper {
+    height: 250px;
+    max-height: 40vh;
+    margin-bottom: 6px;
+    perspective: 1000px;
+  }
+
+  .page-5 .cylinder-carousel__item {
+    width: 140px;
+    height: 200px;
+  }
+
+  .page-5 .next-button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-5 {
+    padding: 5px 8px;
+    padding-top: 10px;
+  }
+
+  .gallery-title {
+    font-size: 1.3rem;
+    margin-bottom: 1px;
+  }
+  
+  .gallery-subtitle {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+  }
+
+  .page-5 .cylinder-carousel-wrapper {
+    height: 200px;
+    max-height: 35vh;
+    margin-bottom: 4px;
+    perspective: 800px;
+  }
+
+  .page-5 .cylinder-carousel__item {
+    width: 110px;
+    height: 160px;
+  }
+
+  .page-5 .next-button {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 380px) {
+  .page-5 {
+    padding: 4px 5px;
+    padding-top: 8px;
+  }
+
+  .gallery-title {
+    font-size: 1.1rem;
+  }
+  
+  .gallery-subtitle {
+    font-size: 0.7rem;
+    margin-bottom: 3px;
+  }
+
+  .page-5 .cylinder-carousel-wrapper {
+    height: 160px;
+    max-height: 30vh;
+    margin-bottom: 3px;
+    perspective: 600px;
+  }
+
+  .page-5 .cylinder-carousel__item {
+    width: 90px;
+    height: 130px;
+  }
+
+  .page-5 .next-button {
+    padding: 6px 16px;
+    font-size: 0.7rem;
+    margin-top: 2px;
+  }
+}
+
+/* Height-based fix for landscape mobile */
+@media (max-height: 600px) and (max-width: 768px) {
+  .page-5 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    justify-content: center;
+  }
+
+  .gallery-title {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+  }
+  
+  .gallery-subtitle {
+    font-size: 0.7rem;
+    margin-bottom: 3px;
+  }
+
+  .page-5 .cylinder-carousel-wrapper {
+    height: 150px;
+    max-height: 45vh;
+    margin-bottom: 4px;
+  }
+
+  .page-5 .cylinder-carousel__item {
+    width: 100px;
+    height: 140px;
+  }
+
+  .page-5 .next-button {
+    padding: 6px 18px;
+    font-size: 0.75rem;
   }
 }
