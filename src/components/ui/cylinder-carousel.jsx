@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import './cylinder-carousel.css';
 
 /**
@@ -6,18 +6,34 @@ import './cylinder-carousel.css';
  * 
  * @param {Object} props
  * @param {Array<{src: string, alt?: string, caption?: string}>} props.images - Array of image objects
- * @param {number} [props.radius=400] - The translateZ radius for the cylinder
+ * @param {number} [props.radius] - The translateZ radius for the cylinder (auto-calculated if not provided)
  * @param {number} [props.duration=15] - Animation duration in seconds for one full rotation
  * @param {boolean} [props.autoRotate=true] - Whether the carousel auto-rotates
  * @param {Function} [props.onImageClick] - Callback when an image is clicked
  */
 const CylinderCarousel = ({ 
   images = [], 
-  radius = 400, 
+  radius: propRadius, 
   duration = 15, 
   autoRotate = true,
   onImageClick 
 }) => {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Calculate responsive radius based on viewport width
+  const radius = propRadius ?? (() => {
+    if (windowWidth < 480) return 150;
+    if (windowWidth < 768) return 220;
+    if (windowWidth < 1024) return 300;
+    return 400;
+  })();
+
   const totalImages = images.length;
   const angle = totalImages > 0 ? 360 / totalImages : 0;
 

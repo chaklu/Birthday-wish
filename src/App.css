@@ -910,39 +910,551 @@ body {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Responsive Design */
+/* ============================================
+   RESPONSIVE DESIGN - Comprehensive Breakpoints
+   ============================================ */
+
+/* Tablet Landscape & smaller laptops (1024px) */
+@media (max-width: 1024px) {
+  .wish-text {
+    font-size: 3.2rem;
+  }
+  
+  .question-text {
+    font-size: 2rem;
+  }
+
+  .khat-title {
+    font-size: 2rem;
+  }
+
+  .khat-container {
+    max-width: 500px;
+    padding: 35px 30px;
+  }
+
+  .video-title {
+    font-size: 2rem;
+  }
+  
+  .video-player {
+    max-width: 650px;
+  }
+
+  .gallery-title {
+    font-size: 2.2rem;
+  }
+
+  .ending-title {
+    font-size: 3.2rem;
+  }
+  
+  .ending-text {
+    font-size: 1.3rem;
+    max-width: 500px;
+  }
+
+  .big-heart {
+    font-size: 5rem;
+  }
+}
+
+/* Tablet Portrait & Large Phones (768px) */
 @media (max-width: 768px) {
+  .page {
+    padding: 15px;
+  }
+
   .wish-text {
     font-size: 2.5rem;
   }
   
+  .wish-subtext {
+    font-size: 1.2rem;
+  }
+
+  .cake-icon {
+    font-size: 3.5rem;
+  }
+
+  .next-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
   .question-box {
-    padding: 30px;
-    margin: 20px;
+    padding: 30px 25px;
+    margin: 15px;
+    max-width: 400px;
   }
   
   .question-text {
     font-size: 1.8rem;
   }
+
+  .heart-icon {
+    font-size: 3rem;
+  }
+
+  .yes-button, .no-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  .button-container {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
   
   .khat-container {
-    padding: 30px;
-    margin: 20px;
+    padding: 30px 25px;
+    margin: 15px;
+    max-width: 450px;
   }
   
   .khat-title {
     font-size: 1.8rem;
   }
-  
-  .reasons-list {
-    grid-template-columns: 1fr;
+
+  .khat-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .khat-text-container {
+    padding: 18px 15px;
   }
   
+  .video-title {
+    font-size: 1.8rem;
+  }
+  
+  .video-player {
+    max-width: 100%;
+    max-height: 50vh;
+  }
+
+  .gallery-title {
+    font-size: 1.8rem;
+  }
+  
+  .gallery-subtitle {
+    font-size: 0.95rem;
+  }
+
   .ending-title {
     font-size: 2.5rem;
   }
   
   .ending-text {
     font-size: 1.2rem;
+    max-width: 450px;
+    padding: 0 15px;
+  }
+
+  .big-heart {
+    font-size: 4rem;
+  }
+
+  .restart-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  /* Lightbox mobile adjustments */
+  .lightbox-content {
+    max-width: 95vw;
+  }
+
+  .lightbox-image {
+    max-width: 90vw;
+    max-height: 60vh;
+  }
+
+  .lightbox-close {
+    top: -35px;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .lightbox-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .lightbox-info p {
+    font-size: 1rem;
+  }
+}
+
+/* Phone (480px) */
+@media (max-width: 480px) {
+  .page {
+    padding: 12px;
+  }
+
+  .wish-text {
+    font-size: 1.8rem;
+  }
+  
+  .wish-subtext {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .cake-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+
+  .next-button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .question-box {
+    padding: 25px 20px;
+    margin: 10px;
+    max-width: 320px;
+  }
+  
+  .question-text {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .heart-icon {
+    font-size: 2.5rem;
+  }
+
+  .yes-button, .no-button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  .button-container {
+    gap: 12px;
+  }
+
+  .hint-text {
+    font-size: 0.85rem;
+  }
+  
+  .khat-container {
+    padding: 25px 20px;
+    margin: 10px;
+    max-width: 100%;
+  }
+  
+  .khat-title {
+    font-size: 1.4rem;
+  }
+
+  .khat-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .khat-text-container {
+    padding: 15px 12px;
+  }
+
+  .khat-text::first-letter {
+    font-size: 1.8rem;
+  }
+  
+  .video-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+  
+  .video-player {
+    max-height: 40vh;
+  }
+
+  .gallery-title {
+    font-size: 1.4rem;
+  }
+  
+  .gallery-subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* Page 6 - Urdu section mobile */
+  .urdu-section {
+    padding: 15px 10px;
+  }
+
+  .nazm-title {
+    font-size: 1.4rem;
+  }
+
+  .nazm-content {
+    padding: 20px 18px;
+  }
+
+  .nazm-verse {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .wadaein-title {
+    font-size: 1.3rem;
+  }
+
+  .wadaein-list {
+    gap: 10px;
+  }
+
+  .wada-item {
+    padding: 12px 14px;
+  }
+
+  .wada-text {
+    font-size: 0.85rem;
+  }
+
+  .wada-icon {
+    font-size: 1.2rem;
+  }
+
+  .wajahain-title {
+    font-size: 1.3rem;
+  }
+
+  .wajahain-grid {
+    gap: 10px;
+  }
+
+  .wajahain-card {
+    height: 100px;
+  }
+
+  .wajahain-card-num {
+    font-size: 1.3rem;
+  }
+
+  .wajahain-card-reason {
+    font-size: 0.75rem;
+  }
+
+  .wajahain-card-label {
+    font-size: 0.6rem;
+  }
+
+  .wajahain-card-heart {
+    font-size: 1rem;
+  }
+
+  .ending-title {
+    font-size: 1.8rem;
+  }
+  
+  .ending-text {
+    font-size: 1rem;
+    max-width: 350px;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .big-heart {
+    font-size: 3rem;
+  }
+
+  .restart-button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Very Small Phone (380px and below) */
+@media (max-width: 380px) {
+  .page {
+    padding: 10px;
+  }
+
+  .wish-text {
+    font-size: 1.4rem;
+  }
+  
+  .wish-subtext {
+    font-size: 0.85rem;
+  }
+
+  .cake-icon {
+    font-size: 2.5rem;
+  }
+
+  .next-button {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+  }
+  
+  .question-box {
+    padding: 20px 15px;
+    max-width: 280px;
+  }
+  
+  .question-text {
+    font-size: 1.2rem;
+  }
+
+  .heart-icon {
+    font-size: 2rem;
+  }
+
+  .yes-button, .no-button {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+  }
+
+  .button-container {
+    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .khat-container {
+    padding: 20px 15px;
+  }
+  
+  .khat-title {
+    font-size: 1.2rem;
+  }
+
+  .khat-text {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .khat-text::first-letter {
+    font-size: 1.5rem;
+  }
+  
+  .video-title {
+    font-size: 1.2rem;
+  }
+
+  .gallery-title {
+    font-size: 1.2rem;
+  }
+
+  .nazm-title {
+    font-size: 1.2rem;
+  }
+
+  .nazm-content {
+    padding: 15px 12px;
+  }
+
+  .nazm-verse {
+    font-size: 0.82rem;
+  }
+
+  .wadaein-title {
+    font-size: 1.1rem;
+  }
+
+  .wajahain-title {
+    font-size: 1.1rem;
+  }
+
+  .wajahain-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .wajahain-card {
+    height: 85px;
+  }
+
+  .wajahain-card-num {
+    font-size: 1.1rem;
+  }
+
+  .wajahain-card-reason {
+    font-size: 0.68rem;
+  }
+
+  .wajahain-card-front,
+  .wajahain-card-back {
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .ending-title {
+    font-size: 1.5rem;
+  }
+  
+  .ending-text {
+    font-size: 0.9rem;
+    max-width: 280px;
+  }
+
+  .big-heart {
+    font-size: 2.5rem;
+  }
+
+  .restart-button {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+  }
+
+  /* Lightbox */
+  .lightbox-image {
+    max-width: 95vw;
+    max-height: 50vh;
+  }
+
+  .lightbox-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .lightbox-info p {
+    font-size: 0.9rem;
+  }
+
+  .lightbox-close {
+    top: -30px;
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Height-based adjustments for landscape mobile */
+@media (max-height: 600px) {
+  .page {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .cake-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .wish-text {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .wish-subtext {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .next-button {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  .video-player {
+    max-height: 50vh;
+  }
+
+  .cylinder-carousel-wrapper {
+    height: 200px !important;
   }
 }

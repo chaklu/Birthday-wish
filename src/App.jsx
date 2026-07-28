@@ -427,7 +427,6 @@ Happy Birthday meri jaan. Tum hamesha khush raho, yahi meri sabse badi dua hai. 
       {/* 3D Cylinder Carousel - Infinite auto-rotation */}
       <CylinderCarousel 
         images={images.gallery} 
-        radius={400}
         duration={15}
         autoRotate={true}
         onImageClick={(img) => openLightbox(img)} 
